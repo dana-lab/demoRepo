@@ -48,10 +48,10 @@ namespace newweb2.Controllers
             public Student Update(Student std)
             {
 
-                var index = stdlist.FirstOrDefault(x => x.StudentId == std.StudentId);
-                stdlist.Remove(index);
-                stdlist.Add(index);
-                return (index);
+                var oldStd = stdlist.FirstOrDefault(x => x.StudentId == std.StudentId);
+                stdlist.Remove(oldStd);
+                stdlist.Add(std);
+                return (std);
 
 
             }
